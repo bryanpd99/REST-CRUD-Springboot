@@ -19,7 +19,7 @@ public class Usuario {
 	@Id
 	@Column(name = "id_usuario",nullable = false,insertable = false)
 	private Long idUsuario;
-	@Column(name = "username")
+	@Column(name = "username",unique = true)
 	private String userName;
 	@Column(name = "password")
 	private String password;
@@ -30,6 +30,6 @@ public class Usuario {
 	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "usuario",insertable = false,updatable=false)
 	private Persona persona;
-	@OneToMany(cascade = CascadeType.ALL,mappedBy = "session")
+	@OneToMany(cascade = CascadeType.ALL,mappedBy = "usuario")
 	private List<Session> sessions;
 }

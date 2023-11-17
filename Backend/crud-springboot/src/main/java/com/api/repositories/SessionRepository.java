@@ -1,5 +1,11 @@
 package com.api.repositories;
 
-public interface SessionRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.api.models.Session;
+import com.api.models.Usuario;
+
+public interface SessionRepository extends JpaRepository<Session, Long>{
+	Session findByUsuario(Usuario usuario);
 
 }

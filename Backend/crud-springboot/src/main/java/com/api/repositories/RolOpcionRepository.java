@@ -1,5 +1,9 @@
 package com.api.repositories;
 
-public interface RolOpcionRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.api.models.RolOpcion;
+
+public interface RolOpcionRepository extends JpaRepository<RolOpcion, Long>{
 
 }

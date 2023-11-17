@@ -1,5 +1,9 @@
 package com.api.repositories;
 
-public interface RolRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.api.models.Rol;
+
+public interface RolRepository extends JpaRepository<Rol, Long> {
 
 }

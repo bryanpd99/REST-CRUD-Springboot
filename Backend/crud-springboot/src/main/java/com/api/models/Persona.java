@@ -5,11 +5,16 @@ import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-
+import jakarta.persistence.Table;
+import lombok.Data;
+@Entity
+@Table(name = "personas")
+@Data
 public class Persona {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,7 +27,7 @@ public class Persona {
 	@Column(name= "apellidos")
 	private String apellidos;
 	@Column(name= "identificacion",unique = true)
-	private String email;
+	private String identificacion;
 	@Column(name= "fecha_nacimiento")
 	private Date fechaNacimiento;
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "persona")
